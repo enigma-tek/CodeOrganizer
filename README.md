@@ -7,3 +7,5 @@ The idea behind Code Organizer is to have an easy to use, easy to search and eas
 There is NO method of, or WILL EVER be added, the ability to store or use passwords or credentials in this tool. You should never, EVER, store passwords or credentials in a script itself. There are many ways to pass that information into a script at run time. You have been warned.
 
 This tool is a repository only. You cannot run the code stored here from the site itself.
+
+To get started, head over to the Repo Wiki!!
