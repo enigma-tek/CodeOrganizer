@@ -1,0 +1,39 @@
+#Function: Takes a number Input and generates a random number (up to 128 numbers) and returns the random number
+Function RanNumGen {
+    param(
+        [int]$RanNumLength
+        )
+
+    $CharacterSet = @{
+            Numeric     = (48..57)  | Get-Random -Count 128 | ForEach-Object {[char]$_}
+            }
+    
+    $StringSet = $CharacterSet.Numeric
+    $FinRanNum = -join(Get-Random -Count $RanNumLength -InputObject $StringSet)
+
+        RETURN $FinRanNum
+}#End RanNumGen function
+
+#Function: Creates a random password based on the length passed to the $PasswordLength paramater using all Upper/Lower/Numeric/Special Characters
+#It gets 30 of each character type and puts them into a variable. It then pulls random characters from that list based on the length requirement passed in
+Function RanPass {
+
+    #Passed in Paramater - Length
+    param(
+        [int]$PasswordLength
+        )
+
+    #ASCII Character set for Password
+    $CharacterSet = @{
+            Uppercase   = (97..122) | Get-Random -Count 30 | ForEach-Object {[char]$_}
+            Lowercase   = (65..90)  | Get-Random -Count 30 | ForEach-Object {[char]$_}
+            Numeric     = (48..57)  | Get-Random -Count 30 | ForEach-Object {[char]$_}
+            SpecialChar = (33..126) | Where-Object {$_-notin (60, 62, 38, 34, 39, 96)} | Get-Random -Count 30 | ForEach-Object {[char]$_}
+            }
+    
+    #Generate random character list / Take list and generate a X-Length password from the list of characters
+    $StringSet = $CharacterSet.Uppercase + $CharacterSet.Lowercase + $CharacterSet.Numeric + $CharacterSet.SpecialChar 
+    $FinPass = -join(Get-Random -Count $PasswordLength -InputObject $StringSet)
+
+        RETURN $FinPass
+}#End RanPass function

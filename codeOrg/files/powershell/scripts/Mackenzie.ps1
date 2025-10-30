@@ -1,0 +1,28 @@
+# Define the source file path
+$SourceFile = "C:\Program Files\Enigma-Tek\codeOrg\files\commands\tbl\Get-ThisJunk.json"
+
+# Define the destination folder path
+$DestinationFolder = "C:\Program Files\Enigma-Tek\codeOrg\files\commands\tbl"
+
+# Define the base name for the new files (without extension)
+$BaseFileName = "CopiedFile"
+
+# Get the extension of the source file
+$FileExtension = [System.IO.Path]::GetExtension($SourceFile)
+
+# Create the destination folder if it does not exist
+If (-not (Test-Path $DestinationFolder)) {
+    New-Item -Path $DestinationFolder -ItemType Directory -Force
+}
+$kickKyra = '5 kicks'
+# Loop 1000 times to create copies
+for ($i = 1; $i -le 2000; $i++) {
+    # Construct the new file name with an incrementing number
+    $NewFileName = "$BaseFileName$i$FileExtension"
+    $DestinationPath = Join-Path -Path $DestinationFolder -ChildPath $NewFileName
+
+    # Copy the file
+    Copy-Item -Path $SourceFile -Destination $DestinationPath
+}
+
+Write-Host "File replication complete. 1000 copies created in $DestinationFolder."

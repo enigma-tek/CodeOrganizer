@@ -1,0 +1,5 @@
+{
+  "Lang": "PowerShell",
+  "Command": "Get-AzApplicationGateway1",
+  "Ref": "Gets an application gateway."
+}
