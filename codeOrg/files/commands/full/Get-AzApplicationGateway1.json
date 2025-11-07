@@ -1,9 +1,0 @@
-{
-  "Note": "New Note",
-  "Ex": "asdfasdf",
-  "Parent": "Az.Network Module",
-  "Ref": "Gets an application gateway.",
-  "Command": "Get-AzApplicationGateway1",
-  "Lang": "PowerShell",
-  "Opt": "sdadfafasdfsdfasdfasdf"
-}

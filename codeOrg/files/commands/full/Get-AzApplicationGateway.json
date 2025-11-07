@@ -1,9 +1,0 @@
-{
-  "Note": "Link to the MSFT docs - https://learn.microsoft.com/en-us/powershell/module/az.network/get-azapplicationgateway?view=azps-14.2.0\r\nThis command can be used to figure out what App Gateways you have in the Azure Subscription\r\n\r\nUse only to get the right amount of data.",
-  "Ex": "$AppGw = Get-AzApplicationGateway -Name \"ApplicationGateway01\" -ResourceGroupName \"ResourceGroup01\"",
-  "Parent": "Az.Network Module",
-  "Ref": "Gets an application gateway.",
-  "Command": "Get-AzApplicationGateway",
-  "Lang": "PowerShell",
-  "Opt": "Get-AzApplicationGateway    [-Name <String>]    [-ResourceGroupName <String>]    [-DefaultProfile <IAzureContextContainer>]    [<CommonParameters>]"
-}
