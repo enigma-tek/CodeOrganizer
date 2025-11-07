@@ -3,12 +3,12 @@ function preChk {
 Write-Host  -foregroundColor Magenta "`n `n      ============ Code Organizer Update Utility ============"
 Write-Host  -foregroundColor Yellow "    This utility is for updating the code organizer core software files. It should not "
 Write-Host  -foregroundColor Yellow "    remove any of your current settings or files, but a backup of the current codeORg folder "
-Write-Host  -foregroundColor Yellow "         is still recommended. Please follow the guide in the GitHub Repo Wiki.  "
+Write-Host  -foregroundColor Yellow "    is still recommended. Please follow the guide in the GitHub Repo Wiki.  "
 Write-Host "`n"
 
   #run Version check to make sure that an update is needed.
   #Get the local version number
-  $chkUpdate = Get-Content "./files/configs/codeOrg.json" | ConvertFrom-Json
+  $chkUpdate = Get-Content "../files/configs/codeOrg.json" | ConvertFrom-Json
   $updateVersion = $chkUpdate.Vers
 
   #Get the online version number
@@ -25,7 +25,7 @@ Write-Host "`n"
     Pause
     updateCodeOrg
   } else {
-    Write-Host -ForegroundColor White " There is no update available. Press any key to exit `n"
+    Write-Host -ForegroundColor White " There is no update available. Press Enter to exit `n"
     Pause
     exitFunk
   }
@@ -55,7 +55,16 @@ Function updateCodeOrg {
   Start-Sleep -Seconds 2
   Copy-Item -Path "../updateTemp/pages*" -Destination "../pages" -Recurse -Force
   Copy-Item -Path "../updateTemp/modules*" -Destination "../modules" -Recurse -Force
-  Write-Host -ForegroundColor Yellow "  Code Organizer has been updated. Cleanup on exit. Press any key to continue to Exit...`n"
+
+  $rawUrl = "https://raw.githubusercontent.com/enigma-tek/PSCodeOrganizer/refs/heads/main/version.txt"
+  $GitVerNum = (Invoke-WebRequest -Uri $rawUrl).Content
+  $verPath = "../files/configs/codeOrg.json"
+  $verU = @{
+    Vers = $GitVerNum
+  }
+  $verU | ConvertTo-Json | Set-Content $verPath
+
+  Write-Host -ForegroundColor Yellow "  Code Organizer has been updated. Cleanup on exit. Press Enter to continue to Exit...`n"
   Pause
   exitFunk
 
@@ -68,8 +77,11 @@ Function exitFunk {
 
   Write-Host -ForegroundColor Yellow "  Cleaning up temp files..."
   Start-Sleep -Seconds 2
+
+  if (Test-Path -Path "../updateTemp") {
   Remove-Item -Path "../updateTemp" -Recurse -Force
   Write-Host -ForegroundColor Yellow "  Temp items cleaned up...`n"
+  } else { Write-Host -ForegroundColor Yellow "  No temp items to clean up...`n"}
 
   Write-Host -ForegroundColor Yellow "  Stopping transcript...`n"
   Stop-Transcript
