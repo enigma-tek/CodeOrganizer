@@ -5,7 +5,7 @@ Write-Host  -foregroundColor Yellow "    This utility is for updating the code o
 Write-Host  -foregroundColor Yellow "    remove any of your current settings or files, but a backup of the current codeORg folder "
 Write-Host  -foregroundColor Yellow "    is still recommended. Please follow the guide in the GitHub Repo Wiki.  "
 Write-Host "`n"
-
+#Hi Mike
   #run Version check to make sure that an update is needed.
   #Get the local version number
   $chkUpdate = Get-Content "../files/configs/codeOrg.json" | ConvertFrom-Json
@@ -114,3 +114,4 @@ Start-Transcript -Path "./update/Logs/codeOrg_Updater_Log_$scriptStartDateTime.l
 
 Clear-Host
 preChk
+
