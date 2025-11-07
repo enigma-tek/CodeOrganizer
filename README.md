@@ -1,6 +1,10 @@
 # Code Organizer
-STILL WORKING ON FINAL PRODUCT - BE DONE SOON (Working on updater and installer!!!) 11/7/2025 (Should be complete by end of the month with WIKI complete.)
+STILL WORKING ON FINAL PRODUCT - BE DONE SOON (Working on updater, installer and Service setup!!!) 
+
+11/7/2025 (Should be complete by end of the month with WIKI complete.)
+
 Updater complete - 11/7/2025
+
 LEFT: Installer and Service configuration
 
 
