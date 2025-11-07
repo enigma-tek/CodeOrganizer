@@ -21,7 +21,7 @@ Write-Host "`n"
 
   if ($updateVersion -lt $GitVerNum) {
 
-    Write-Host -ForegroundColor Green "There is an update available. `n"
+    Write-Host -ForegroundColor Green "There is an update available. Press Enter to install update `n"
     Pause
     updateCodeOrg
   } else {
@@ -49,9 +49,9 @@ Function updateCodeOrg {
 
   Write-Host -ForegroundColor Yellow "  Removing old files..."
   Start-Sleep -Seconds 2
-  Remove-Item -Path ".//pages/*.ps1"
-  Remove-Item -Path ".//modules/*.ps1"
-  Write-Host -ForegroundColor Yellow "  Old files removes. Copying new files..."
+  Remove-Item -Path "../pages/*.ps1"
+  Remove-Item -Path "../modules/*.ps1"
+  Write-Host -ForegroundColor Yellow "  Old files removed. Copying new files..."
   Start-Sleep -Seconds 2
   Copy-Item -Path "../updateTemp/pages*" -Destination "../pages" -Recurse -Force
   Copy-Item -Path "../updateTemp/modules*" -Destination "../modules" -Recurse -Force
@@ -114,5 +114,3 @@ Start-Transcript -Path "./update/Logs/codeOrg_Updater_Log_$scriptStartDateTime.l
 
 Clear-Host
 preChk
-
-
