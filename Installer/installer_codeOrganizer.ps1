@@ -1,13 +1,3 @@
-#check if the software is installed and what version its on
-#IF installed, ask if they would like to uninstall, or exit
-#>Run uninstall routine if asked / stop service / Remove service / Zip all files and place on desktop as a backup.
-#IF not installed ask if want install or exit
-#install pre-check - Check if there are pode and podeweb folders in the powershell directory / Check if they are in the users directory>
-##IF they are in user, ask if they want them to be copied to? IF non are found, ask if you would like to install. If install, recheck the directories
-##before moving forward
-#Install > GRab zip file from repo> Create Enigma-tek folder and unzip the codeOrg folder into / Create service / Create shortcut to start stop
-
-
 Function preChkInstall {
 
     $preChkPath = "C:\Program Files\Enigma-Tek\codeOrg"
@@ -200,4 +190,5 @@ Param([int]$ConWidth=$host.ui.rawui.windowsize.width,
 Set-WindowSize 199 80 *>$null
 
 Clear-Host
+
 preChkInstall
