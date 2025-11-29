@@ -3,7 +3,7 @@
 # Code Organizer
 
 Pode.Web driven web portal for organizing PowerShell, PowerShell Snippets, KQL, SQL and frequently used Commands.
-There are a lot of ways to store PowerShell scripts and code snippets, with the ability to make comments, version numbers, compatability, etc. You can use GitHub, a folder with files, a wiki, etc. This utility allows the ease of use with a simple portal designed specifically for organizing code that generally has no other place to live. 
+There are a lot of ways to store PowerShell scripts and code snippets, with the ability to make comments, version numbers, compatibility, etc. You can use GitHub, a folder with files, a wiki, etc. This utility allows the ease of use with a simple portal designed specifically for organizing code that generally has no other place to live. 
 
 The idea behind Code Organizer is to have an easy to use, easy to search and easy to read site running locally. (If there is any request for a Team version I can release one. It would be Entra ID and OAuth based and you would need a certificate)
 
