@@ -36,6 +36,15 @@ Function updateCodeOrg {
   Clear-Host
   Write-Host  -foregroundColor Magenta "`n `n      ============ Code Organizer Update Utility ============ `n"
 
+  $linkPath = "../../files/links"
+
+  # Check if the folder exists
+  if (Test-Path -Path $linkPath) {
+      #do nothing and move on
+  } else {
+      New-Item -Path "../../files/links" -ItemType Directory -Force
+  }
+
   Write-Host -ForegroundColor Yellow "  Creating temp directory...."
   Start-Sleep -Seconds 2
   New-Item -Name "updateTemp" -Path "./" -ItemType Directory
