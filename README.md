@@ -1,4 +1,6 @@
-***Current Version 1.0.1 - Fixed the update mechanism that updates the updater.ps1 file. Was supposed to check for update to that file on Home page launch. This fix will make new versions easier to deploy.
+***Current Version 1.0.2 - Fixed a bug in the homepage on load mechanis that pointed to the wrong folder to check for updater updates.
+
+1.0.1 - Fixed the update mechanism that updates the updater.ps1 file. Was supposed to check for update to that file on Home page launch. This fix will make new versions easier to deploy.
 
 # Code Organizer
 
