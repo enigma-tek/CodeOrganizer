@@ -1,4 +1,4 @@
-***Current Version 1.0.2 - Fixed a bug in the homepage on load mechanis that pointed to the wrong folder to check for updater updates.
+***Current Version 1.0.2 - Fixed a bug in the homepage on load mechanism that pointed to the wrong folder to check for updater updates. Home Page adjustments made for getting ready for Links section addition. Home page added clickable count boxes takes you directly to the codehub section of choice.
 
 1.0.1 - Fixed the update mechanism that updates the updater.ps1 file. Was supposed to check for update to that file on Home page launch. This fix will make new versions easier to deploy.
 
